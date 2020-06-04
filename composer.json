@@ -2,7 +2,7 @@
     "name": "carter-digital/commerce-merchant-warrior",
     "description": "Merchant Warrior gateway for Craft Commerce 3",
     "type": "library",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "license": "MIT",
     "authors": [
         {
