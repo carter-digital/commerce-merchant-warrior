@@ -22,9 +22,12 @@ use craft\events\RegisterComponentTypesEvent;
  */
 class Plugin extends BasePlugin
 {
+    /**
+     * @inheritdoc
+     */
     public function init()
     {
-        parent::init();        
+        parent::init();
 
         Event::on(
             Gateways::class,
