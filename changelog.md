@@ -1,3 +1,7 @@
+## 0.0.4 - 2020-06-04
+### Removed
+- Unnecessary logging removed
+
 ## 0.0.3 - 2020-06-04
 ### Added
 - Package information updated
