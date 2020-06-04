@@ -1,4 +1,8 @@
 ## 0.0.4 - 2020-06-04
+### Fixed
+- Merchant UUID property name fixed in settings form
+
+## 0.0.4 - 2020-06-04
 ### Removed
 - Unnecessary logging removed
 
