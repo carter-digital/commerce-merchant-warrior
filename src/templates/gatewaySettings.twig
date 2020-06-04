@@ -3,12 +3,12 @@
 {{ autosuggestField({
     label: 'Merchant UUID'|t('commerce'),
     instructions: "Your Direct API Merchant UUID."|t('commerce'),
-    id: 'uuid',
+    id: 'merchantUuid',
     class: 'ltr',
-    name: 'uuid',
+    name: 'merchantUuid',
     suggestEnvVars: true,
-    value: gateway.uuid,
-    errors: gateway.getErrors('uuid')
+    value: gateway.merchantUuid,
+    errors: gateway.getErrors('merchantUuid')
 }) }}
 
 {{ autosuggestField({
