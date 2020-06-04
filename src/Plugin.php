@@ -57,14 +57,5 @@ class Plugin extends BasePlugin
                 $event->types[] = Gateway::class;
             }
         );
-        
-        Craft::info(
-            Craft::t(
-                'carterdigital-commerce-merchant-warrior',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
-            __METHOD__
-        );
     }
 }
