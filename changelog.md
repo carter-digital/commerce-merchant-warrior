@@ -1,3 +1,10 @@
+## 0.1.0 - 2020-06-04
+### Added
+- Omnipay integration incorporated
+
+### Fixed
+- Typos, unused imports
+
 ## 0.0.5 - 2020-06-04
 ### Fixed
 - Merchant UUID property name fixed in settings form
