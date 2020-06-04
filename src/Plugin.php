@@ -9,7 +9,6 @@ namespace carterdigital\commerce\merchantwarrior;
 
 use yii\base\Event;
 
-use Craft;
 use craft\base\Plugin as BasePlugin;
 use craft\commerce\services\Gateways;
 use craft\events\RegisterComponentTypesEvent;
