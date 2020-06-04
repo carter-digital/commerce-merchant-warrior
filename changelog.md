@@ -1,4 +1,4 @@
-## 0.0.4 - 2020-06-04
+## 0.0.5 - 2020-06-04
 ### Fixed
 - Merchant UUID property name fixed in settings form
 
