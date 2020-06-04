@@ -14,6 +14,8 @@ use craft\base\Plugin as BasePlugin;
 use craft\commerce\services\Gateways;
 use craft\events\RegisterComponentTypesEvent;
 
+use carterdigital\commerce\merchantwarrior\gateways\Gateway;
+
 /**
  * Plugin represents the Merchant Warrior integration plugin.
  *
@@ -21,7 +23,26 @@ use craft\events\RegisterComponentTypesEvent;
  * @since 1.0
  */
 class Plugin extends BasePlugin
-{
+{      
+    // Static Properties
+    // =========================================================================
+
+    /**
+     * @var Plugin
+     */
+    public static $plugin;
+
+    // Public Properties
+    // =========================================================================
+    
+    /**
+     * @var string
+     */
+    public $schemaVersion = '1.0.0';
+
+    // Public Methods
+    // =========================================================================
+
     /**
      * @inheritdoc
      */
@@ -46,5 +67,4 @@ class Plugin extends BasePlugin
             __METHOD__
         );
     }
-
 }
