@@ -1,0 +1,41 @@
+{% from "_includes/forms" import textField, lightswitchField, autosuggestField %}
+
+{{ autosuggestField({
+    label: 'Merchant UUID'|t('commerce'),
+    instructions: "Your Direct API Merchant UUID."|t('commerce'),
+    id: 'uuid',
+    class: 'ltr',
+    name: 'uuid',
+    suggestEnvVars: true,
+    value: gateway.uuid,
+    errors: gateway.getErrors('uuid')
+}) }}
+
+{{ autosuggestField({
+    label: "API Key"|t('commerce'),
+    instructions: "Your Direct API Key."|t('commerce'),
+    id: 'apiKey',
+    class: 'ltr',
+    name: 'apiKey',
+    suggestEnvVars: true,
+    value: gateway.apiKey,
+    errors: gateway.getErrors('apiKey')
+}) }}
+
+{{ autosuggestField({
+    label: "API Passphrase"|t('commerce'),
+    instructions: "Your Direct API Passphrase."|t('commerce'),
+    id: 'apiPassphrase',
+    class: 'ltr',
+    name: 'apiPassphrase',
+    suggestEnvVars: true,
+    value: gateway.apiPassphrase,
+    errors: gateway.getErrors('apiPassphrase')
+}) }}
+
+{{ lightswitchField({
+    label: "In Test Mode"|t('commerce'),
+    name: 'testMode',
+    on: gateway.testMode,
+    errors: gateway.getErrors('testMode'),
+}) }}
