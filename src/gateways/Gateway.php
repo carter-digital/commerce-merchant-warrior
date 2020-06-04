@@ -6,7 +6,8 @@ use Craft;
 use craft\commerce\omnipay\base\CreditCardGateway;
 
 use Omnipay\Common\AbstractGateway;
-use Omnipay\MerchantWarrior\Gateway as OmnipayGateway;
+
+use carterdigital\commerce\merchantwarrior\omnipay\Gateway as OmnipayGateway;
 
 class Gateway extends CreditCardGateway
 {   
