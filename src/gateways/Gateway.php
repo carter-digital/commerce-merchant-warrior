@@ -17,7 +17,7 @@ class Gateway extends CreditCardGateway
     /**
      * @var string
      */
-    public $merchantUuid;
+    public $merchantUUID;
 
     /**
      * @var string

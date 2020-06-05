@@ -28,7 +28,7 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
     }
 
     /**
-     * Sets your MerchantUUID
+     * Sets your merchantUUID
      * @param string $value
      */
     public function setMerchantUUID($value)
@@ -75,6 +75,7 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
     {
         $currency = (is_null($this->getCurrency()))? 'AUD' : $this->getCurrency();
         $hash = md5(strtolower(md5($this->getApiPassphrase()) . $this->getMerchantUUID() . $this->getAmount() . $currency));
+
         return $hash;
     }
 

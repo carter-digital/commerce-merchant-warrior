@@ -14,7 +14,7 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return [
-            'MerchantUUID' => '',
+            'merchantUUID' => '',
             'ApiKey' => '',
             'ApiPassphrase' => ''
         ];
@@ -22,12 +22,12 @@ class Gateway extends AbstractGateway
 
     public function getMerchantUUID()
     {
-        return $this->getParameter('MerchantUUID');
+        return $this->getParameter('merchantUUID');
     }
 
     public function setMerchantUUID($value)
     {
-        $this->setParameter('MerchantUUID', $value);
+        $this->setParameter('merchantUUID', $value);
     }
 
     public function getApiKey()
