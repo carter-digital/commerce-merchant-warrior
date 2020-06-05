@@ -1,3 +1,10 @@
+## 0.1.1 - 2020-06-04
+### Added
+- Customer full name and IP address added to processCard request
+
+### Fixed
+- Convention, wrong namespaces for request classes
+
 ## 0.1.0 - 2020-06-04
 ### Added
 - Omnipay integration incorporated
