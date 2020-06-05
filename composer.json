@@ -2,7 +2,7 @@
     "name": "carter-digital/commerce-merchant-warrior",
     "description": "Merchant Warrior gateway for Craft Commerce 3",
     "type": "craft-plugin",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "keywords": [
         "craft",
         "cms",
@@ -10,7 +10,9 @@
         "craft-plugin",
         "craft-commerce",
         "gateway",
-        "merchant-warrior"
+        "merchant-warrior",
+        "merchant",
+        "warrior"
     ],
     "support": {
         "docs": "https://github.com/carter-digital/commerce-merchant-warrior/blob/master/readme.md",

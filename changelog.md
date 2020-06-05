@@ -1,4 +1,8 @@
-## 0.1.1 - 2020-06-04
+## 0.1.2 - 2020-06-05
+### Updated
+- Documentation improved
+
+## 0.1.1 - 2020-06-05
 ### Added
 - Customer full name and IP address added to processCard request
 
