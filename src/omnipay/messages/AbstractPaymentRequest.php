@@ -20,8 +20,27 @@ abstract class AbstractPaymentRequest extends AbstractRequest
         $this->setParameter('transactionProduct', $value);
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCustomerIP()
+    {
+        return $this->getParameter('customerIP');
+    }
+
+    /**
+     * @param $value
+     */
+    public function setCustomerIP($value)
+    {
+        $this->setParameter('customerIP', $value);
+    }
+
     public function getData()
     {
+        $this->setTransactionProduct($this->getDescription());
+        $this->setCustomerIP($this->getParameter('clientIp'));
+
         $this->validate();
 
         $data = [
@@ -32,6 +51,8 @@ abstract class AbstractPaymentRequest extends AbstractRequest
             'transactionCurrency' => (is_null($this->getCurrency()))? 'AUD' : $this->getCurrency(),
             'transactionProduct' => $this->getTransactionProduct(),
             'transactionReferenceID' => $this->getTransactionReference(),
+            'customerIP' => $this->getCustomerIP(),
+            'customerName' => $this->getCard()->getFirstName() . ' ' . $this->getCard()->getLastName(),
             'storeID' => $this->getStoreID(),
             'custom1' => $this->getCustom1(),
             'custom2' => $this->getCustom2(),
