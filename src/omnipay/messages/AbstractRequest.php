@@ -6,20 +6,28 @@ use Omnipay\Common\Message\AbstractRequest as OmnipayAbstractRequest;
 
 abstract class AbstractRequest extends OmnipayAbstractRequest
 {
-    /*
-     * The API method for the request
+    // Public Properties
+    // =========================================================================
+
+    /**
+     * @var string
      */
     protected $method = '';
 
-    /*
-     * Merchant Warrior API endpoints
+    /**
+     * @var string
      */
     protected $liveEndpoint = 'https://api.merchantwarrior.com/post/';
-    protected $testEndPoint = 'https://base.merchantwarrior.com/post/';
-
 
     /**
-     * This is your Merhcant ID assigned to you by merchant Warrior
+     * @var string
+     */
+    protected $testEndPoint = 'https://base.merchantwarrior.com/post/';
+
+    // Public Methods
+    // =========================================================================
+
+    /**
      * @return string
      */
     public function getMerchantUUID()
@@ -28,7 +36,6 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
     }
 
     /**
-     * Sets your merchantUUID
      * @param string $value
      */
     public function setMerchantUUID($value)
@@ -37,7 +44,6 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
     }
 
     /**
-     *  Example: 1a3b5c
      * @return string
      */
     public function getApiKey()
@@ -45,19 +51,10 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
         return $this->getParameter('apiKey');
     }
 
-    public function getApiPassphrase()
-    {
-        return $this->getParameter('apiPassphrase');
-    }
-
-    public function setApiPassphrase($value)
-    {
-        $this->setParameter('apiPassphrase', $value);
-    }
-
     /**
-     *  Example: 1a3b5c
-     *  Notes: The value of this parameter is assigned to you by Merchant Warrior
+     * Example: 1a3b5c
+     * Notes: The value of this parameter is assigned to you by Merchant Warrior
+     * 
      * @param string $value
      */
     public function setApiKey($value)
@@ -66,9 +63,26 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
     }
 
     /**
+     * @return string
+     */
+    public function getApiPassphrase()
+    {
+        return $this->getParameter('apiPassphrase');
+    }
+
+    /**
+     * @param string $value
+     */
+    public function setApiPassphrase($value)
+    {
+        $this->setParameter('apiPassphrase', $value);
+    }
+
+    /**
      * Example: e9ddc296b76b3398934bfc06239073df
      * Notes: The verification hash is a combination of the MD5 of your API Passphrase
      * and specific parameters sent in the transaction.
+     * 
      * @return string
      */
     public function getTransactionHash()
@@ -79,31 +93,49 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
         return $hash;
     }
 
+    /**
+     * @return string
+     */
     public function getCustom1()
     {
         return $this->getParameter('custom1');
     }
 
+    /**
+     * @param string $value
+     */
     public function setCustom1($value)
     {
         $this->setParameter('custom1', $value);
     }
 
+    /**
+     * @return string
+     */
     public function getCustom2()
     {
         return $this->getParameter('custom2');
     }
 
+    /**
+     * @param string $value
+     */
     public function setCustom2($value)
     {
         $this->setParameter('custom2', $value);
     }
 
+    /**
+     * @return string
+     */
     public function getCustom3()
     {
         return $this->getParameter('custom3');
     }
 
+    /**
+     * @param string $value
+     */
     public function setCustom3($value)
     {
         $this->setParameter('custom3', $value);
@@ -111,6 +143,7 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
 
     /**
      * Gets the respective MW API endpoint
+     * 
      * @return string
      */
     public function getEndPoint()
@@ -118,15 +151,26 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
         return $this->getTestMode() ? $this->testEndPoint : $this->liveEndpoint;
     }
 
-    public function getStoreID(){
+    /**
+     * @return string
+     */
+    public function getStoreID()
+    {
         return $this->getParameter('storeID');
     }
 
+    /**
+     * @param string $value
+     */
     public function setStoreID($value)
     {
         $this->setParameter('storeID', $value);
     }
 
+    /**
+     * @param array $data
+     * @return Response
+     */
     public function sendData($data)
     {
         $client = new Client();
@@ -148,6 +192,9 @@ abstract class AbstractRequest extends OmnipayAbstractRequest
         return $this->response;
     }
 
+    /**
+     * @return array
+     */
     protected function getCardData()
     {
         $card = $this->getCard();

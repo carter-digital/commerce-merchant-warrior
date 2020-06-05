@@ -6,11 +6,20 @@ use Omnipay\Common\AbstractGateway;
 
 class Gateway extends AbstractGateway
 {
+    // Public Properties
+    // =========================================================================
+
+    /**
+     * @var string
+     */
     public function getName()
     {
         return 'Merchant Warrior';
     }
 
+    /**
+     * @var array
+     */
     public function getDefaultParameters()
     {
         return [
@@ -20,31 +29,49 @@ class Gateway extends AbstractGateway
         ];
     }
 
+    /**
+     * @var string
+     */
     public function getMerchantUUID()
     {
         return $this->getParameter('merchantUUID');
     }
 
+    /**
+     * @param string $value
+     */
     public function setMerchantUUID($value)
     {
         $this->setParameter('merchantUUID', $value);
     }
 
+    /**
+     * @var string
+     */
     public function getApiKey()
     {
         return $this->getParameter('Apikey');
     }
 
+    /**
+     * @param string $value
+     */
     public function setApiKey($value)
     {
         $this->setParameter('Apikey', $value);
     }
 
+    /**
+     * @var string
+     */
     public function getApiPassphrase()
     {
         $this->getParameter('ApiPassphrase');
     }
 
+    /**
+     * @param string $value
+     */
     public function setApiPassphrase($value)
     {
         $this->setParameter('ApiPassphrase', $value);
@@ -52,6 +79,7 @@ class Gateway extends AbstractGateway
 
     /**
      * Authorize an amount on the customers card
+     * 
      * @param array $parameters
      * @return null
      */
@@ -65,6 +93,7 @@ class Gateway extends AbstractGateway
 
     /**
      * Capture an amount you have previously authorized
+     * 
      * @param array $parameters
      * @return null
      */

@@ -4,6 +4,9 @@ namespace carterdigital\commerce\merchantwarrior\omnipay\messages;
 
 abstract class AbstractPaymentRequest extends AbstractRequest
 {
+    // Public Methods
+    // =========================================================================
+
     /**
      * @return mixed
      */
@@ -13,7 +16,7 @@ abstract class AbstractPaymentRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      */
     public function setTransactionProduct($value)
     {
@@ -21,7 +24,7 @@ abstract class AbstractPaymentRequest extends AbstractRequest
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCustomerIP()
     {
@@ -29,13 +32,16 @@ abstract class AbstractPaymentRequest extends AbstractRequest
     }
 
     /**
-     * @param $value
+     * @param string $value
      */
     public function setCustomerIP($value)
     {
         $this->setParameter('customerIP', $value);
     }
 
+    /**
+     * @return array
+     */
     public function getData()
     {
         $this->setTransactionProduct($this->getDescription());

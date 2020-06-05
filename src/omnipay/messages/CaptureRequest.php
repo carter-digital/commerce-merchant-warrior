@@ -13,17 +13,28 @@ class CaptureRequest extends AbstractRequest
         $this->method = 'processCapture';
     }
 
+    // Public Methods
+    // =========================================================================
+
+    /**
+     * @return string
+     */
     public function getTransactionId()
     {
         return $this->getParameter('transactionID');
     }
 
+    /**
+     * @param string $value
+     */
     public function setTransactionID($value)
     {
         $this->setParameter('transactionID', $value);
     }
 
-
+    /**
+     * @return array
+     */
     public function getData()
     {
         $this->validate();

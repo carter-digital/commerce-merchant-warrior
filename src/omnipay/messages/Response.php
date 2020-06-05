@@ -20,36 +20,60 @@ class Response extends AbstractResponse
         $this->data = $data;
     }
 
+    // Public Methods
+    // =========================================================================
+
+    /**
+     * @return string
+     */
     public function getTransactionId()
     {
         return (string) $this->data['transactionID'];
     }
 
+    /**
+     * @return string
+     */
     public function getReceiptNo()
     {
         return (string) $this->data['receiptNo'];
     }
 
+    /**
+     * @return string
+     */
     public function getCode()
     {
         return (string) $this->data['authResponseCode'];
     }
 
+    /**
+     * @return string
+     */
     public function getAuthCode()
     {
         return (string) $this->data['authCode'];
     }
 
+    /**
+     * @return string
+     */
     public function getAuthSettledDate()
     {
         return (string) $this->data['authSettledDate'];
     }
 
+    /**
+     * @return string
+     */
     public function getMessage()
     {
         return (string) $this->data['responseMessage'];
     }
 
+    /**
+     * @return boolean
+     */
     public function isSuccessful()
     {
         return ((int)$this->data['responseCode'] === 0) ? true : false;

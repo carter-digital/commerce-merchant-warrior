@@ -48,7 +48,8 @@ class Gateway extends CreditCardGateway
     /**
      * @inheritdoc
      */
-    public function getSettingsHtml() {
+    public function getSettingsHtml() 
+    {
         return Craft::$app->getView()->renderTemplate('commerce-merchant-warrior/gatewaySettings.twig', ['gateway' => $this]);
     }
     
